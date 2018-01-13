@@ -1,6 +1,6 @@
 TWITTER = {
-    "CONSUMER_KEY": "my-twitter-consumer-key",
-    "CONSUMER_SECRET": "my-twitter-consumer-secret",
-    "ACCESS_TOKEN": "my-access-token",
-    "ACCESS_TOKEN_SECRET": "my-access-token-secret"
+    "CONSUMER_KEY": "bn4XxBzPCEow1SrfQC0gEI07T",
+    "CONSUMER_SECRET": "XBVHtusIxY698IixgYcsbrA6Yf2Jz3CemFHuXPGWwWybRNbJfs",
+    "ACCESS_TOKEN": "952109330073047041-5XPbuCKMXqa8oSxFhbWgRze6TbXInRd",
+    "ACCESS_TOKEN_SECRET": "x4dxV50x6vq6qfXtaE44MIYzhb9pdM8nlnqVxtpk8HgGv"
 }

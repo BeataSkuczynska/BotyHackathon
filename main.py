@@ -21,10 +21,11 @@ TWITTER = {
 # Comment out the following line to disable verbose logging
 logging.basicConfig(level=logging.INFO)
 
+
 chatbot = ChatBot(
     "TwitterBot",
     logic_adapters=[
-        "chatterbot.logic.BestMatch"
+        {'import_path': 'test_chatterbot.MyLogicAdapter'},
     ],
     input_adapter="chatterbot.input.TerminalAdapter",
     output_adapter="chatterbot.output.TerminalAdapter",
@@ -33,12 +34,15 @@ chatbot = ChatBot(
     twitter_consumer_secret=TWITTER["CONSUMER_SECRET"],
     twitter_access_token_key=TWITTER["ACCESS_TOKEN"],
     twitter_access_token_secret=TWITTER["ACCESS_TOKEN_SECRET"],
-    trainer="chatterbot.trainers.TwitterTrainer"
+    trainer="chatterbot.trainers.TwitterTrainer",
+    statement_comparison_function="chatterbot.comparisons.sentiment_comparison"
 )
-
-chatbot.train()
+for i in range(2):
+    chatbot.train()
 
 chatbot.logger.info('Trained database generated successfully!')
+# print(chatbot.storage.find("dumb"))
+
 
 while True:
     try:
