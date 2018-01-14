@@ -34,23 +34,23 @@ class MyLogicAdapter(LogicAdapter):
         return response
 
 
-if __name__ == "__main__":
-
-    # Enable info level logging
-    logging.basicConfig(level=logging.INFO)
-
-    chatbot = ChatBot(
-        'Example Bot',
-        trainer='chatterbot.trainers.ChatterBotCorpusTrainer',
-        logic_adapters = [{'import_path': 'test_chatterbot.MyLogicAdapter'}]
-    )
-
-    # Start by training our bot with the ChatterBot corpus data
-    chatbot.train(
-        'chatterbot.corpus.english.greetings'
-    )
-
-
-    # Now let's get a response to a greeting
-    response = chatbot.get_response('How are you')
-    print(response)
+# if __name__ == "__main__":
+#
+#     # Enable info level logging
+#     logging.basicConfig(level=logging.INFO)
+#
+#     chatbot = ChatBot(
+#         'Example Bot',
+#         trainer='chatterbot.trainers.ChatterBotCorpusTrainer',
+#         logic_adapters = [{'import_path': 'test_chatterbot.MyLogicAdapter'}]
+#     )
+#
+#     # Start by training our bot with the ChatterBot corpus data
+#     chatbot.train(
+#         'chatterbot.corpus.english.greetings'
+#     )
+#
+#
+#     # Now let's get a response to a greeting
+#     response = chatbot.get_response('How are you')
+#     print(response)
