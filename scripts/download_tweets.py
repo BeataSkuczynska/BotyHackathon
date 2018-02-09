@@ -2,6 +2,7 @@
 """
 This script is for downloading tweets to TXT file from particular Twitter account.
 """
+# NOTE: Working direcgory must be set to ..\boty_hackathon\
 
 import tweepy
 from settings import TWITTER
@@ -22,7 +23,7 @@ def get_twitter_api():
 
 def download_tweets(path, amount_of_tweets, user_name):
     api = get_twitter_api()
-    with open(path + user_name[1:] + ".txt", 'w', encoding="UTF-8") as file:
+    with open(path + user_name[1:] + ".txt", 'a', encoding="UTF-8") as file:
         for status in tweepy.Cursor(api.user_timeline, screen_name=user_name).items(int(amount_of_tweets)):
             sjson = status._json['text']
             if "RT @" not in sjson:

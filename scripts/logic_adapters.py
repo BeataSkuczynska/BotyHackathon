@@ -34,9 +34,12 @@ class DonaldLogicAdapter(LogicAdapter):
 
     def get_table(self):
         donald = []
-        with open(DONALD_CORPUS) as file:
-            for line in file:
-                donald.append(line)
+        with open(DONALD_CORPUS, encoding='utf-8') as file:
+            try:
+                for line in file:
+                    donald.append(line)
+            except UnicodeDecodeError:
+                pass
         return donald
 
     def process(self, statement):
@@ -67,7 +70,11 @@ class HillaryLogicAdapter(DonaldLogicAdapter):
 
     def get_table(self):
         hillary = []
-        with open(HILLARY_CORPUS) as file:
-            for line in file:
-                hillary.append(line)
+        with open(HILLARY_CORPUS, encoding='utf-8') as file:
+            try:
+                for line in file:
+                    hillary.append(line)
+            except UnicodeDecodeError:
+                pass
+
         return hillary
